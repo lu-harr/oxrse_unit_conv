@@ -1,11 +1,12 @@
 import unittest
 from oxrse_unit_conv.meta import classes
-from oxrse_unit_conv.units import kilometer, m, m2, m3, s, hour
+from oxrse_unit_conv.units import kilometer, m, m2, m3, s, hour, J
 
 
 class TestConversionCore(unittest.TestCase):
     def test_matches(self):
         self.assertTrue(m.matches(m))
+        self.assertTrue(J.matches(J))
 
     def test_basic_conversion(self):
         self.assertEqual(kilometer.to_si(1), 1_000)
